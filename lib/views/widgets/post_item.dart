@@ -20,6 +20,13 @@ class PostItem extends StatefulWidget {
 }
 
 class _PostItemState extends State<PostItem> {
+  List<String> someList = [
+    "imageLink1",
+    "imageLink2",
+    "imageLink3",
+    "imageLink4"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -55,63 +62,58 @@ class _PostItemState extends State<PostItem> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Etkinlik adı: ",
-                              style: TextStyle(
-                                color: Colors.black,
-                                decoration: TextDecoration.none,
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "aaa ",
-                              style: TextStyle(
-                                color: Colors.black,
-                                decoration: TextDecoration.none,
-                                fontSize: 11,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          "Etkinlik adı: ",
+                          style: TextStyle(
+                            color: Colors.black,
+                            decoration: TextDecoration.none,
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              "Konu: ",
-                              style: TextStyle(
-                                color: Colors.black,
-                                decoration: TextDecoration.none,
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "aaa ",
-                              style: TextStyle(
-                                color: Colors.black,
-                                decoration: TextDecoration.none,
-                                fontSize: 11,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          "aaa ",
+                          style: TextStyle(
+                            color: Colors.black,
+                            decoration: TextDecoration.none,
+                            fontSize: 11,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Konu: ",
+                          style: TextStyle(
+                            color: Colors.black,
+                            decoration: TextDecoration.none,
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "aaa ",
+                          style: TextStyle(
+                            color: Colors.black,
+                            decoration: TextDecoration.none,
+                            fontSize: 11,
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                       ],
                     ),
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Text(
@@ -124,28 +126,31 @@ class _PostItemState extends State<PostItem> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 30,
-                        width: 50,
-                        child: TextButton(
-                          child: Text(
-                            "Katıl",
-                            style: TextStyle(
-                              fontSize: 8,
-                              color: Colors.white70,
-                            ),
-                          ),
-                          style: TextButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12.0),
-                                ),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          height: 30,
+                          width: 50,
+                          child: TextButton(
+                            child: Text(
+                              "Katıl",
+                              style: TextStyle(
+                                fontSize: 8,
+                                color: Colors.white70,
                               ),
-                              backgroundColor: Colors.blue,
-                              primary: Colors.grey),
-                          onPressed: () {},
+                            ),
+                            style: TextButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(12.0),
+                                  ),
+                                ),
+                                backgroundColor: Colors.blue,
+                                primary: Colors.grey),
+                            onPressed: () {},
+                          ),
                         ),
                       ),
                     ),
@@ -158,16 +163,42 @@ class _PostItemState extends State<PostItem> {
                   fit: BoxFit.cover,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Row(children: []),
-                    Flexible(
-                        child: Container(child:  CircleAvatar(
-                          backgroundImage: AssetImage(
-                            "${widget.dp}",
-                          ),
-                        )))
+                    SizedBox(
+                      height: 60,
+                      width: 200,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                            children: List.generate(3, (index) {
+                          return Positioned(
+                              left: (index * (1 - .4) * 40).toDouble(),
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                  "${widget.dp}",
+                                ),
+                              ));
+                        })),
+                      ),
+                    ),
+                    Container(
+                      child: Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [IconButton(
+                            icon: Icon(
+                              Icons.favorite_border,
+                            ),
+                            onPressed: () {},
+                          ),IconButton(
+                            icon: Icon(
+                              Icons.comment,
+                            ),
+                            onPressed: () {},
+                          ),],
+                        ),
+                      ),
+                    )
                   ],
                 )
               ],
