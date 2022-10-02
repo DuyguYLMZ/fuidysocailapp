@@ -43,3 +43,4 @@ Adapts to device theme
 ## 🔖 LICENCE
 [WTFPL](http://www.wtfpl.net/about/)
 # fuidysocailapp
+# fuidysocailapp
