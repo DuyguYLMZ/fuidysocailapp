@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:refresh_widget/refresh_widget.dart';
@@ -10,6 +11,7 @@ import 'package:social_app_ui/views/screens/main_screen.dart';
 import 'package:social_app_ui/views/widgets/custom_text_field.dart';
 
 import '../../../util/globalontextservice.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -229,6 +231,15 @@ class _LoginState extends State<Login> {
           ),
         ),
       );
+  }
+
+  Future<void> main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+
+// Ideal time to initialize
+    await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+//...
   }
 
  }

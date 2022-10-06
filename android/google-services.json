@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "631086707759",
+    "project_id": "duba-ac899",
+    "storage_bucket": "duba-ac899.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631086707759:android:4e475d4fec17959131c2da",
+        "android_client_info": {
+          "package_name": "com.duba.fuidy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631086707759-ifl80kasi08th2s91kqb7nu5bpm3hdcu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMUgtS3WiPiyEP-v8oSox2B-XlRl36_vA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631086707759-ifl80kasi08th2s91kqb7nu5bpm3hdcu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631086707759:android:12054ca1c41c605631c2da",
+        "android_client_info": {
+          "package_name": "com.duba.fuidysocailapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631086707759-ifl80kasi08th2s91kqb7nu5bpm3hdcu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMUgtS3WiPiyEP-v8oSox2B-XlRl36_vA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631086707759-ifl80kasi08th2s91kqb7nu5bpm3hdcu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

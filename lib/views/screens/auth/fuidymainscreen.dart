@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_builder.dart';
@@ -10,6 +11,7 @@ import 'package:social_app_ui/util/router.dart';
 import 'package:social_app_ui/views/screens/auth/signinpage.dart';
 import 'package:social_app_ui/views/screens/main_screen.dart';
 
+import '../../../aut/auth.dart';
 import '../../../util/colors.dart';
 import '../../../util/data.dart';
 import 'loginpage.dart';
@@ -193,7 +195,16 @@ class _FuidyMainPageState extends State<FuidyMainPage> {
                         SignInButtonBuilder(
                           text: 'Sign in with Google',
                           icon: Icons.mail,
-                          onPressed: () {},
+                            onPressed: () async {
+                             /* var res = await Auth.googleSignIn();
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                  backgroundColor:
+                                  res == null ? Colors.green : Colors.red,
+                                  content: Text(res ?? "Logged in!")));
+                           */
+                              User user =
+                              await Auth.signInWithGoogle(context: context);
+                            },
                           backgroundColor: CustomColor.googleColor,
                         ),
                       ],
